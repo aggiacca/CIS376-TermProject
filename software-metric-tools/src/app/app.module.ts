@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { IndexComponent } from './index/index.component';
 import {RouterModule, Routes} from "@angular/router";
 import { FunctionPointsCalculatorComponent } from './function-points-calculator/function-points-calculator.component';
+import {FormsModule} from "@angular/forms";
 
 
 const appRoutes: Routes = [
@@ -24,6 +25,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     NgbModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],
