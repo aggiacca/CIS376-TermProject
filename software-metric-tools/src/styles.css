@@ -1,5 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+
 /* Move down content because we have a fixed navbar that is 3.5rem tall */
 body {
-  padding-top: 3.5rem;
+  /*padding-top: 3.5rem;*/
+  background-color: #ddd;
+}
+
+
+/* Customize container */
+@media (min-width: 768px) {
+  .mainContainer {
+    max-width: 900px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* Custom Styles */
+.mainContainer{
+  padding: 50px !important;
+  border-radius: 6px;
+  background-color: #ddd;
+  margin-top: 45px;
 }
