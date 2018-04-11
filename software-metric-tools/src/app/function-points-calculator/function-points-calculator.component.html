@@ -34,5 +34,30 @@
 </div>
 
 
-
 <hr>
+
+<div class="row" style="border-bottom: black solid 1px;">
+  <div class="col-md-4">Measurement Parameter</div>
+  <div class="col-md-2">Count</div>
+  <div class="col-md-5"> Weighting Factor: Simple/Average/Complex</div>
+</div>
+
+<form>
+  <div class="row" *ngFor="let param of parameters">
+    <div class="col-md-4">{{param.name}}</div>
+    <div class="col-md-1">
+      <input type="number" class="form-control" name="numInputs" [(ngModel)]="param.count" placeholder="#">
+    </div>
+    <div class="col-md-5">
+      <div class="form-check form-check-inline" *ngFor="let num of param.weightFactors">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" [value]="num">
+        <label class="form-check-label" for="inlineRadio1">{{num}}</label>
+      </div>
+    </div>
+    <div class="col-md-1">
+      <input type="number" class="form-control" name="numInputsTotal" [(ngModel)]="param.weightedTotal"  readonly>
+    </div>
+  </div>
+</form>
+
+

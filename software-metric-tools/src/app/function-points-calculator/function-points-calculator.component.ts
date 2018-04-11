@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Question} from "../models/Question";
+import {WeightedParameter} from "../models/weighted-parameter";
 
 @Component({
   selector: 'app-function-points-calculator',
@@ -12,35 +13,30 @@ export class FunctionPointsCalculatorComponent implements OnInit {
     new Question("Does the system require reliable backup and recovery?",0),
     new Question("Are data communication required?", 0),
     new Question("Are there distributed processing functions?",0),
-      new Question("Is performance critical?", 0),
-    //     new Question("Will the system run in an existing heavily utilized operational environment?",
-    // "Does the system require on-line data entry?",
-    // "Does the on-line data entry require input transaction to be built over multiple screens or operations?",
-    // "Are the master files updated on-line?",
-    // "Are the inputs, outputs, files, or inquiries complex?",
-    // "Is the internal processing complex?",
-    // "Is the code designed to be reusable?",
-    // "Are conversion and installation included in the design?",
-    // "Is the system designed for multiple installations in different organizations?",
-    // "Is the application designed to facilitate change and ease of use by the user?"
+    new Question("Is performance critical?", 0),
+    new Question("Will the system run in an existing heavily utilized operational environment?", 0),
+    new Question("Does the system require on-line data entry?", 0),
+    new Question("Does the on-line data entry require input transaction to be built over multiple screens or operations?", 0),
+    new Question("Are the master files updated on-line?", 0),
+    new Question("Are the inputs, outputs, files, or inquiries complex?", 0),
+    new Question("Is the internal processing complex?", 0),
+    new Question("Is the code designed to be reusable?", 0),
+    new Question("Are conversion and installation included in the design?", 0),
+    new Question("Is the system designed for multiple installations in different organizations?", 0),
+    new Question("Is the application designed to facilitate change and ease of use by the user?", 0)
   ];
-  question0: number = 0;
-  question1: number= 1;
-  question2: number;
-  question3: number;
-  question4: number;
-  question5: number;
-  question6: number;
-  question7: number;
-  question8: number;
-  question9: number;
-  question10: number;
-  question11: number;
-  question12: number;
-  question13: number;
-  question14: number;
+
+  parameters: Array<WeightedParameter> =[
+    new WeightedParameter("Number of User Inputs", [3,4,5], 0,0),
+    new WeightedParameter("Number of User Outputs", [4,5,7], 0,0),
+    new WeightedParameter("Number of User Inquiries", [3,4,5], 0,0),
+    new WeightedParameter("Number of Files", [7,10,15], 0,0),
+    new WeightedParameter("Number of External Interfaces", [5,7,10], 0,0)
+  ];
 
   questionaireTotal: number;
+
+  numInputsCount: number;
 
   constructor() { }
 
