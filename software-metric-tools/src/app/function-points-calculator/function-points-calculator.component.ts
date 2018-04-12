@@ -38,6 +38,8 @@ export class FunctionPointsCalculatorComponent implements OnInit {
 
   numInputsCount: number;
 
+  functionPoints: number = 0;
+
   constructor() { }
 
   ngOnInit() {
@@ -49,6 +51,13 @@ export class FunctionPointsCalculatorComponent implements OnInit {
     for(let question of this.questions){
       this.questionaireTotal += question.rating
     }
+  }
+
+  calculateFunctionPoints(){
+    let weightedInputs = this.parameters[0].count * this.parameters[0].weightedTotal;
+
+    console.log(weightedInputs);
+    this.functionPoints = weightedInputs * (0.65 + (0.01 * this.questionaireTotal));
   }
 
   trackByIndex(index: number, value: number) {

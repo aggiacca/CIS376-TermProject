@@ -8,12 +8,16 @@ import { IndexComponent } from './index/index.component';
 import {RouterModule, Routes} from "@angular/router";
 import { FunctionPointsCalculatorComponent } from './function-points-calculator/function-points-calculator.component';
 import {FormsModule} from "@angular/forms";
+import { CocomoCalculatorComponent } from './cocomo-calculator/cocomo-calculator.component';
+import { QsdiCalculatorComponent } from './qsdi-calculator/qsdi-calculator.component';
 
 
 const appRoutes: Routes = [
   { path: 'app', component: AppComponent, pathMatch: 'full' },
   { path: 'index', component: IndexComponent, pathMatch: 'full' },
   { path: 'function-points', component: FunctionPointsCalculatorComponent, pathMatch: 'full' },
+  { path: 'cocomo-calculator', component: CocomoCalculatorComponent, pathMatch: 'full' },
+  { path: 'qsdi-calculator', component: QsdiCalculatorComponent, pathMatch: 'full' },
 ];
 
 @NgModule({
@@ -21,7 +25,9 @@ const appRoutes: Routes = [
     AppComponent,
     HeaderComponent,
     IndexComponent,
-    FunctionPointsCalculatorComponent
+    FunctionPointsCalculatorComponent,
+    CocomoCalculatorComponent,
+    QsdiCalculatorComponent
   ],
   imports: [
     BrowserModule,

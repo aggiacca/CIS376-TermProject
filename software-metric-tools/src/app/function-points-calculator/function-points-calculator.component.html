@@ -49,15 +49,18 @@
       <input type="number" class="form-control" name="numInputs" [(ngModel)]="param.count" placeholder="#">
     </div>
     <div class="col-md-5">
-      <div class="form-check form-check-inline" *ngFor="let num of param.weightFactors">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" [value]="num">
-        <label class="form-check-label" for="inlineRadio1">{{num}}</label>
+      <div class="form-check form-check-inline" *ngFor="let num of param.weightFactors;let index = index">
+        <input class="form-check-input" type="radio" name="{{param.name}}" id="{{param.name + index}}" [value]="num" [(ngModel)]="param.weightedTotal">
+        <label class="form-check-label" for="{{param.name + index}}">{{num}}</label>
       </div>
     </div>
     <div class="col-md-1">
-      <input type="number" class="form-control" name="numInputsTotal" [(ngModel)]="param.weightedTotal"  readonly>
+      <input type="number" class="form-control" name="numInputsTotal"  readonly>
     </div>
   </div>
 </form>
 
-
+<div class="row">
+  <p>Functions Point: {{functionPoints}}</p>
+  <button class="btn btn-primary" (click)="calculateFunctionPoints()">Calculate Functions Point</button>
+</div>
