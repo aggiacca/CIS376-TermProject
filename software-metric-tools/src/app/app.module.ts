@@ -10,6 +10,7 @@ import { FunctionPointsCalculatorComponent } from './function-points-calculator/
 import {FormsModule} from "@angular/forms";
 import { CocomoCalculatorComponent } from './cocomo-calculator/cocomo-calculator.component';
 import { QsdiCalculatorComponent } from './qsdi-calculator/qsdi-calculator.component';
+import { UsecasePointsCalculatorComponent } from './usecase-points-calculator/usecase-points-calculator.component';
 
 
 const appRoutes: Routes = [
@@ -18,6 +19,7 @@ const appRoutes: Routes = [
   { path: 'function-points', component: FunctionPointsCalculatorComponent, pathMatch: 'full' },
   { path: 'cocomo-calculator', component: CocomoCalculatorComponent, pathMatch: 'full' },
   { path: 'qsdi-calculator', component: QsdiCalculatorComponent, pathMatch: 'full' },
+  { path: 'usecase-points-calculator', component: UsecasePointsCalculatorComponent, pathMatch: 'full' },
 ];
 
 @NgModule({
@@ -27,7 +29,8 @@ const appRoutes: Routes = [
     IndexComponent,
     FunctionPointsCalculatorComponent,
     CocomoCalculatorComponent,
-    QsdiCalculatorComponent
+    QsdiCalculatorComponent,
+    UsecasePointsCalculatorComponent
   ],
   imports: [
     BrowserModule,

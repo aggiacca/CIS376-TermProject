@@ -1,39 +1,94 @@
-<table class="table">
-  <thead>
-  <tr>
-    <th scope="col"></th>
-    <th scope="col" colspan="2">Basic</th>
-    <th scope="col" colspan="2">Intermediate</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td>Mode</td>
-    <td>a</td>
-    <td>b</td>
-    <td>a</td>
-    <td>b</td>
-  </tr>
-  <tr>
-    <td>Organic</td>
-    <td>2.4</td>
-    <td>1.05</td>
-    <td>3.2</td>
-    <td>1.05</td>
-  </tr>
-  <tr>
-    <td>Semidetached</td>
-    <td>3.0</td>
-    <td>1.12</td>
-    <td>3.0</td>
-    <td>1.12</td>
-  </tr>
-  <tr>
-    <td>Embedded</td>
-    <td>3.6</td>
-    <td>1.20</td>
-    <td>2.8</td>
-    <td>1.20</td>
-  </tr>
-  </tbody>
-</table>
+
+<div class="row">
+  <h1 class="page-header">Function Points Calculator</h1>
+</div>
+
+<hr>
+
+<div class="row">
+  <p>Look at the table and determine type </p>
+</div>
+<div class="row">
+  <table class="table table-striped table-dark">
+    <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col" colspan="2">Basic</th>
+      <th scope="col" colspan="2">Intermediate</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td align="right">Mode</td>
+      <td>a</td>
+      <td>b</td>
+      <td>a</td>
+      <td>b</td>
+    </tr>
+    <tr>
+      <td align="right">Organic</td>
+      <td>2.4</td>
+      <td>1.05</td>
+      <td>3.2</td>
+      <td>1.05</td>
+    </tr>
+    <tr>
+      <td align="right">Semidetached</td>
+      <td>3.0</td>
+      <td>1.12</td>
+      <td>3.0</td>
+      <td>1.12</td>
+    </tr>
+    <tr>
+      <td align="right">Embedded</td>
+      <td>3.6</td>
+      <td>1.20</td>
+      <td>2.8</td>
+      <td>1.20</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="row">
+  <p>Basic COCOMO forumla: E = aS<sup>b</sup><p>
+</div>
+
+<form>
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <label for="linesOfCode">S: </label>
+      <input type="number" class="form-control" id="linesOfCode" placeholder="Insert Lines of KLOC">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <label for="inputMode">Mode</label>
+      <select id="inputMode"  name="inputMode" class="form-control" [(ngModel)]="currentMode">
+        <option *ngFor="let line of data" [selected]="line.name == 'Basic'" [value]="line.modes">{{line.name}}</option>
+      </select>
+    </div>
+    <div class="form-group col-md-3">
+      <label for="inputComplexity">Complexity</label>
+      <select id="inputComplexity" name="inputComplexity" class="form-control" [(ngModel)]="currentComplexity">
+        <option *ngFor="let line of currentMode" [value]="line.values">{{line.name}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-1">
+      <label for="a">a:</label>
+      <input type="number" class="form-control" name="a"  id="a" readonly value="{{currentPair.a}}">
+    </div>
+    <div class="form-group col-md-1">
+      <label for="inputComplexity">b:</label>
+      <input type="number" class="form-control" name="b" id="b" readonly value="{{currentPair.b}}">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <label for="E">Output E: </label>
+      <input type="number" class="form-control" name="E"  id="E" readonly>
+    </div>
+  </div>
+</form>
