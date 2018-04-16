@@ -35,7 +35,7 @@ export class QsdiCalculatorComponent implements OnInit {
   sErrors: Array<String> = [];
 
   showDValues = false;
-  showSErrors = this.sErrors.length > 0;
+  showSErrors = false;
   weightError = false;
 
   constructor() { }
@@ -45,7 +45,8 @@ export class QsdiCalculatorComponent implements OnInit {
 
   setSValues(){
     // reset errors
-    this.sErrors = [];
+    this.sErrors.length = 0;
+    this.showSErrors = false;
 
     if(!(this.sValues[0].rating > 0)){
       this.sErrors.push("S1 must be greater than 0");
@@ -75,6 +76,12 @@ export class QsdiCalculatorComponent implements OnInit {
       this.sErrors.push("S1 must be greater than S7");
     }
 
+    console.dir(this.sErrors);
+    if(this.sErrors.length > 0){
+      this.showSErrors = true;
+      this.showDValues = false;
+    }
+
     if(!this.showSErrors){
       if(this.d1ValueChecked){
         this.dValues[0].rating = 1
@@ -86,6 +93,7 @@ export class QsdiCalculatorComponent implements OnInit {
       this.dValues[4].rating = (1 - (this.sValues[5].rating / this.sValues[3].rating));
       this.dValues[5].rating = (1 - (this.sValues[6].rating / this.sValues[0].rating));
 
+      this.showDValues = true;
     }
 
 

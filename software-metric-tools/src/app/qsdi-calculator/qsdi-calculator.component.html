@@ -23,7 +23,7 @@
       <div class="col-md-1">S<sub>{{index+1}}</sub></div>
       <div class="col-md-6">{{question.content}}</div>
       <div class="col-sm-1">
-        <input type="number" class="form-control" name="sValue{{index+1}}" id="inputsValue{{index+1}}" [(ngModel)]="question.rating" placeholder="Input number 0-5..." min="0" max="5">
+        <input type="number" class="form-control" name="sValue{{index+1}}" id="inputsValue{{index+1}}" [(ngModel)]="question.rating" placeholder="#" min="0" max="5">
       </div>
     </div>
 
@@ -60,15 +60,17 @@
 
     <div class="form-row">
       <div class="offset-md-5 col-sm-1">
-        <button id="sValueBtn" (ngclick)="setSValues()" class="btn btn-primary">Set S Values</button>
+        <button id="sValueBtn" (click)="setSValues()" class="btn btn-primary">Set S Values</button>
       </div>
       <div class="offset-md-1 col-sm-1">
         <span id="successCheck" class="glyphicon glyphicon-ok text-success" aria-hidden="true" style="display: none"></span>
       </div>
     </div>
 
+    <br>
 
-    <div id="invalidS" class="alert alert-danger" role="alert" *ngIf="showSErrors" >
+    <div id="invalidS" class="alert alert-danger" role="alert" *ngIf="showSErrors">
+      Errors
       <ul>
         <li *ngFor="let error of sErrors">{{error}}</li>
       </ul>
@@ -85,28 +87,27 @@
 <br />
 <br />
 
-<div class="row" *ngIf="showDValues">
-  <div class="row">
-    <h3 class="col-sm-5 text-center">D-Values</h3>
-    <h3 class="col-sm-7 text-center">Weights<small>(Must Total 100%)</small></h3>
+<div *ngIf="showDValues">
+  <div class="row" style="border-bottom: black solid 1px;">
+    <h3 class="col-md-3 offset-md-2">D-Values</h3>
+    <h3 class="col-md-4 offset-md-1 ">Weights<small>(Must Total 100%)</small></h3>
   </div>
-
-  <form class="form-horizontal">
+    <form class="form-horizontal">
     <div id="collapseGroup2">
 
-      <!-- WD template block -->
       <div class="form-row has-feedback" *ngFor="let question of dValues; let index=index">
-
-        <div class="col-sm-3">
+        <div class="col-md-1 offset-md-2">D<sub>{{index+1}}</sub></div>
+        <div class="col-sm-1">
           <input type="number" readonly class="form-control" id="D{{index}}" placeholder="{{question.rating}}">
         </div>
 
-        <label for="W{{index}}" class="col-sm-offset-1 col-sm-2 control-label">W<sub>{{index}}</sub> for D<sub>{{index}}</sub></label>
-        <div class="col-sm-4">
+        <label for="W{{index}}" class="offset-md-2 col-sm-1 control-label">W<sub>{{index}}</sub> for D<sub>{{index}}</sub></label>
+        <div class="col-sm-2">
           <div class="input-group">
-            <input type="number" class="form-control" id="W{{index}}"  [(ngModel)]="question.weight" placeholder="Enter W{{index}}">
-            <span id="W{{index}}Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback extraSpace" aria-hidden="false"></span>
-            <div class="input-group-addon">%</div>
+            <input type="number" class="form-control" name="W{{index}}" id="W{{index}}"  [(ngModel)]="question.weight" placeholder="Enter W{{index}}" aria-describedby="basic-addon1">
+            <div class="input-group-append">
+              <span class="input-group-text" id="basic-addon1">%</span>
+            </div>
           </div>
         </div>
       </div>
@@ -127,7 +128,7 @@
 
       <div class="form-row">
         <div class="offset-md-5 col-sm-1">
-          <button id="calculateBtn" (ngclick)="calculateDSQI()" class="btn btn-primary">Calculate DSQI</button>
+          <button id="calculateBtn" (click)="calculateDSQI()" class="btn btn-primary">Calculate DSQI</button>
         </div>
         <div class="col-md-1 col-sm-1">
           <span id="dsqiSuccessCheck" class="glyphicon glyphicon-ok text-success successPadding" aria-hidden="true" style="display: none"></span>
@@ -140,16 +141,15 @@
 
       <div class="form-row" *ngIf="dsqi != 0">
         <label for="DSQI" class="col-sm-2 control-label">DSQI </label>
-        <div class="col-sm-3">
+        <div class="col-sm-3 alert alert-success" role="alert">
           <input type="number" readonly class="form-control" id="DSQI" placeholder="{{dsqi}}">
         </div>
       </div>
 
       <div id="invalidD" class="alert alert-danger" role="alert" *ngIf="weightError" >
-        Weights do not total to 100%
+        Error - Weights do not total to 100%
       </div>
 
     </div>
   </form>
-
-</div>
+  </div>
