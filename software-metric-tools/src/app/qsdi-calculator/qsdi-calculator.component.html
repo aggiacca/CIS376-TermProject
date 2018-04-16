@@ -1,3 +1,155 @@
-<p>
-  qsdi-calculator works!
-</p>
+<div class="row">
+  <h1 class="page-header">DSQI Calculator</h1>
+</div>
+
+<hr>
+
+<form class="form-horizontal">
+  <div id="collapseGroup">
+
+    <div class="form-row">
+      <h5 class="page-header">S-Values</h5>
+    </div>
+    <br>
+
+    <div class="form-row" style="border-bottom: black solid 1px;">
+      <div class="col-md-1">Value</div>
+      <div class="col-md-6">Description</div>
+      <div class="col-md-2">Number</div>
+    </div>
+
+
+    <div *ngFor="let question of sValues; let index=index" class="form-row">
+      <div class="col-md-1">S<sub>{{index+1}}</sub></div>
+      <div class="col-md-6">{{question.content}}</div>
+      <div class="col-sm-1">
+        <input type="number" class="form-control" name="sValue{{index+1}}" id="inputsValue{{index+1}}" [(ngModel)]="question.rating" placeholder="Input number 0-5..." min="0" max="5">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label for="d1CheckBox" class="col-sm-2 control-label">
+          <span data-toggle="tooltip" data-placement="left" title="Click for Help" class="red-tooltip">
+            <a role="button" class="btn btn-info btn-xs" data-toggle="collapse" href="#D1Des2" aria-expanded="false" aria-controls="D1Des2">
+              D<sub>1</sub>
+            </a>
+            </span>
+      </label>
+
+      <div class="col-sm-4">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="d1CheckBox" [checked]="d1ValueChecked" (change)="d1ValueChecked = !d1ValueChecked"> Used distinct method?
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="collapse" id="D1Des2">
+      <div class="well">
+        <ul>
+          <li>
+            Definition: Program Structure
+          </li>
+          <li>
+            If the architectural design was developed using a distinct method(e.g. data flow-oriented or object-oriented design), then check the box (D<sub>1</sub> = 1), otherwise keep unchecked (D<sub>1</sub> = 0).
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="offset-md-5 col-sm-1">
+        <button id="sValueBtn" (ngclick)="setSValues()" class="btn btn-primary">Set S Values</button>
+      </div>
+      <div class="offset-md-1 col-sm-1">
+        <span id="successCheck" class="glyphicon glyphicon-ok text-success" aria-hidden="true" style="display: none"></span>
+      </div>
+    </div>
+
+
+    <div id="invalidS" class="alert alert-danger" role="alert" *ngIf="showSErrors" >
+      <ul>
+        <li *ngFor="let error of sErrors">{{error}}</li>
+      </ul>
+    </div>
+
+  </div>
+
+
+</form>
+
+<!-- divider -->
+
+<br />
+<br />
+<br />
+
+<div class="row" *ngIf="showDValues">
+  <div class="row">
+    <h3 class="col-sm-5 text-center">D-Values</h3>
+    <h3 class="col-sm-7 text-center">Weights<small>(Must Total 100%)</small></h3>
+  </div>
+
+  <form class="form-horizontal">
+    <div id="collapseGroup2">
+
+      <!-- WD template block -->
+      <div class="form-row has-feedback" *ngFor="let question of dValues; let index=index">
+
+        <div class="col-sm-3">
+          <input type="number" readonly class="form-control" id="D{{index}}" placeholder="{{question.rating}}">
+        </div>
+
+        <label for="W{{index}}" class="col-sm-offset-1 col-sm-2 control-label">W<sub>{{index}}</sub> for D<sub>{{index}}</sub></label>
+        <div class="col-sm-4">
+          <div class="input-group">
+            <input type="number" class="form-control" id="W{{index}}"  [(ngModel)]="question.weight" placeholder="Enter W{{index}}">
+            <span id="W{{index}}Err" style="display: none" class="glyphicon glyphicon-remove form-control-feedback extraSpace" aria-hidden="false"></span>
+            <div class="input-group-addon">%</div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-row" style="display:none">
+
+        <label for="WTotal" class="offset-md-4 col-sm-4 control-label">
+          Total Weight
+        </label>
+        <div class="col-sm-3">
+          <input type="number" readonly class="form-control" id="WTotal" placeholder="0%">
+        </div>
+
+      </div>
+
+      <br/>
+
+      <div class="form-row">
+        <div class="offset-md-5 col-sm-1">
+          <button id="calculateBtn" (ngclick)="calculateDSQI()" class="btn btn-primary">Calculate DSQI</button>
+        </div>
+        <div class="col-md-1 col-sm-1">
+          <span id="dsqiSuccessCheck" class="glyphicon glyphicon-ok text-success successPadding" aria-hidden="true" style="display: none"></span>
+        </div>
+      </div>
+
+      <div id="weightTotal" class="alert alert-danger" role="alert" style="display: none">Weights don't add up to one hundred </div>
+      <div id="invalidWeight" class="alert alert-danger" role="alert" style="display: none">Weights must be greater than 0</div>
+
+
+      <div class="form-row" *ngIf="dsqi != 0">
+        <label for="DSQI" class="col-sm-2 control-label">DSQI </label>
+        <div class="col-sm-3">
+          <input type="number" readonly class="form-control" id="DSQI" placeholder="{{dsqi}}">
+        </div>
+      </div>
+
+      <div id="invalidD" class="alert alert-danger" role="alert" *ngIf="weightError" >
+        Weights do not total to 100%
+      </div>
+
+    </div>
+  </form>
+
+</div>

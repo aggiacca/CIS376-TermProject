@@ -1,37 +1,62 @@
 <div class="row">
-  <h1 class="page-header">Function Points Calculator</h1>
+  <h1 class="page-header">Use Case Points Calculator</h1>
 </div>
 
 <hr>
 
+<div class="row">
+  <h3 class="page-header">Instructions</h3>
+  <p>Fill in the blanks</p>
+</div>
+
+
+
 <form>
+
+  <div class="form-row">
+    <h5 class="page-header">Unadjusted Use Case Weight (UUCW)</h5>
+  </div>
+  <br>
   <div class="form-row" style="border-bottom: black solid 1px;">
     <div class="col-md-4">Use Case Classification</div>
-    <div class="col-md-2">Number of Use Cases</div>
-    <div class="col-md-5">Weight</div>
+    <div class="col-md-3">Number of Use Cases</div>
+    <div class="col-md-2">Weight</div>
   </div>
 
   <div class="form-row">
-    <div class="col-md-4">Simple</div>
+    <div class="col-md-4">Simple (1 to 3 transactions)</div>
       <div class="col-md-1">
         <input type="number" class="form-control" name="numInputs" [(ngModel)]="simpleUUCW" placeholder="#">
       </div>
-      <div class="col-md-5">5</div>
-
-      <div class="col-md-4">Average</div>
+      <div class="col-md-1 offset-md-2">
+        <input type="number" class="form-control"  placeholder="5" readonly>
+      </div>
+  </div>
+  <div class="form-row">
+      <div class="col-md-4">Average (4 to 7 transactions)</div>
       <div class="col-md-1">
         <input type="number" class="form-control" name="numInputs" [(ngModel)]="averageUUCW" placeholder="#">
       </div>
-      <div class="col-md-5">5</div>
-
-      <div class="col-md-4">Complex</div>
+      <div class="col-md-1 offset-md-2">
+        <input type="number" class="form-control"  placeholder="10" readonly>
+      </div>
+  </div>
+  <div class="form-row">
+      <div class="col-md-4">Complex (8 or more transactions)</div>
       <div class="col-md-1">
         <input type="number" class="form-control" name="numInputs" [(ngModel)]="complexUUCW" placeholder="#">
       </div>
-      <div class="col-md-5">5</div>
+      <div class="col-md-1 offset-md-2">
+        <input type="number" class="form-control"  placeholder="15" readonly>
+      </div>
   </div>
 
   <hr>
+
+  <div class="form-row">
+    <h5 class="page-header">Unadjusted Actor Weight (UAW)</h5>
+  </div>
+  <br>
 
   <div class="form-row" style="border-bottom: black solid 1px;">
     <div class="col-md-4">Actor Type</div>
@@ -40,62 +65,164 @@
   </div>
 
 <div class="form-row">
-    <div class="col-md-4">Simple</div>
+    <div class="col-md-6">Simple (External system that must interact with the system using a well-defined API)</div>
     <div class="col-md-1">
       <input type="number" class="form-control" name="numInputs" [(ngModel)]="simpleUAW" placeholder="#">
     </div>
-    <div class="col-md-5">5</div>
+    <div class="col-md-5">
+      <input type="number" class="form-control"  placeholder="1" readonly>
+    </div>
 
-    <div class="col-md-4">Average</div>
+    <div class="col-md-6">Average (External system that must interact with the system using standard communication protocols)</div>
     <div class="col-md-1">
       <input type="number" class="form-control" name="numInputs" [(ngModel)]="averageUAW" placeholder="#">
     </div>
-    <div class="col-md-5">5</div>
+    <div class="col-md-5">
+      <input type="number" class="form-control"  placeholder="2" readonly>
+    </div>
 
-    <div class="col-md-4">Complex</div>
+    <div class="col-md-6">Complex (	Human actor using a GUI application interface)</div>
     <div class="col-md-1">
       <input type="number" class="form-control" name="numInputs" [(ngModel)]="complexUAW" placeholder="#">
     </div>
-    <div class="col-md-5">5</div>
+    <div class="col-md-5">
+      <input type="number" class="form-control"  placeholder="3" readonly>
+    </div>
 </div>
 
+  <hr>
+
+  <div class="form-row">
+    <h5 class="page-header">Technical Complexity Factor (TCF)</h5>
+  </div>
+  <br>
+
   <div class="form-row" style="border-bottom: black solid 1px;">
-    <div class="col-md-4">Technical Complexity</div>
+    <div class="col-md-3">Technical Complexity</div>
     <div class="col-md-2">Relavence(0-5)</div>
-    <div class="col-md-5">Weight</div>
+    <div class="col-md-2">Weight</div>
   </div>
 
 
   <div *ngFor="let question of questions; let index=index" class="form-group row">
-    <label for="inputQuestion{{index}}" class="col-sm-6 col-form-label">{{index}}: {{question.content}}</label>
+    <label for="inputQuestion{{index+1}}" class="col-sm-3 col-form-label">{{index+1}}: {{question.content}}</label>
     <div class="col-sm-1">
-      <input type="number" class="form-control" name="question{{index}}" id="inputQuestion{{index}}" [(ngModel)]="question.rating" placeholder="Input number 0-5..." min="0" max="5">
+      <input type="number" class="form-control" name="question{{index+1}}" id="inputQuestion{{index+1}}" [(ngModel)]="question.rating" placeholder="Input number 0-5..." min="0" max="5">
     </div>
-    <div class="col-sm-2">
+    <div class="col-sm-2 offset-md-1">
       <input type="number" class="form-control"  placeholder="{{question.weight}}" readonly>
     </div>
   </div>
 
+  <hr>
+
+  <div class="form-row">
+    <h5 class="page-header">Environmental Complexity Factor (ECF)</h5>
+  </div>
+  <br>
+
   <div class="form-row" style="border-bottom: black solid 1px;">
-    <div class="col-md-4">Environmental Factors</div>
-    <div class="col-md-2">Skill Level 0-5</div>
-    <div class="col-md-5">Weight</div>
+    <div class="col-md-3">Environmental Factors</div>
+    <div class="col-md-2">Skill Level (0-5)</div>
+    <div class="col-md-2">Weight</div>
   </div>
 
 
   <div *ngFor="let question of environmentalFactors; let index=index" class="form-group row">
-    <label for="inputEnvFactor{{index}}" class="col-sm-6 col-form-label">{{index}}: {{question.content}}</label>
+    <label for="inputEnvFactor{{index+1}}" class="col-sm-3 col-form-label">{{index+1}}: {{question.content}}</label>
     <div class="col-sm-1">
-      <input type="number" class="form-control" name="inputEnvFactor{{index}}" id="inputEnvFactor{{index}}" [(ngModel)]="question.rating" placeholder="Input number 0-5..." min="0" max="5">
+      <input type="number" class="form-control" name="inputEnvFactor{{index+1}}" id="inputEnvFactor{{index+1}}" [(ngModel)]="question.rating" placeholder="Input number 0-5..." min="0" max="5">
     </div>
-    <div class="col-sm-2">
+    <div class="col-sm-2 offset-md-1">
       <input type="number" class="form-control"  placeholder="{{question.weight}}" readonly>
     </div>
   </div>
 
 </form>
 
-<div class="row">
-  <p>Use Case Points: {{UCP}}</p>
-  <button class="btn btn-primary" (click)="calculateUseCasePoint()">Calculate Use Case Point</button>
+<hr>
+
+<div class="row offset-md-5">
+  <button class="btn btn-primary" (click)="calculateUseCasePoint()">Calculate Use Case Points</button>
 </div>
+
+<br>
+
+<div class="row" *ngIf="calculationSuccess">
+  <div class="col-md-7">
+    <div class="row">
+      <h4>Point Calculations</h4>
+    </div>
+    <div class="row">
+      <div class="col-md-6">Unadjusted Use Case Weight (UUCW)</div>
+      <div class="col-md-3">
+        <input type="number" class="form-control"  placeholder="{{totalUUCW}}" readonly>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">Unadjusted Actor Weight (UAW)</div>
+      <div class="col-md-3">
+        <input type="number" class="form-control"  placeholder="{{totalUAW}}" readonly>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">Technical Complexity Factor (TCF)</div>
+      <div class="col-md-3">
+        <input type="number" class="form-control"  placeholder="{{TCF}}" readonly>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">Environmental Complexity Factor (ECF))</div>
+      <div class="col-md-3">
+        <input type="number" class="form-control"  placeholder="{{ECF}}" readonly>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="col-md-6">Use Case Points (UCP)</div>
+      <div class="col-md-3">
+        <input type="number" class="form-control"  placeholder="{{UCP}}" readonly>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-5">
+    <div class="row">
+      <h4>Hours Calculations</h4>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5">Hours per Point</div>
+      <div class="col-md-3">
+        <input type="number" class="form-control"  name="hoursPerPoint" [(ngModel)]="hoursPerPoint" placeholder="#">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5">Total Hours</div>
+      <div class="col-md-3">
+        <input type="number" class="form-control"  placeholder="{{totalHours}}" readonly>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5">Person Months</div>
+      <div class="col-md-3">
+        <input type="number" class="form-control"  placeholder="{{personMonths}}" readonly>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5">Duration Months</div>
+      <div class="col-md-3">
+        <input type="number" class="form-control"  placeholder="{{durationMonths}}" readonly>
+      </div>
+    </div>
+
+</div>
+
+

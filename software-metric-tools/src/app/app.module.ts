@@ -11,6 +11,7 @@ import {FormsModule} from "@angular/forms";
 import { CocomoCalculatorComponent } from './cocomo-calculator/cocomo-calculator.component';
 import { QsdiCalculatorComponent } from './qsdi-calculator/qsdi-calculator.component';
 import { UsecasePointsCalculatorComponent } from './usecase-points-calculator/usecase-points-calculator.component';
+import { ToolsListComponent } from './tools-list/tools-list.component';
 
 
 const appRoutes: Routes = [
@@ -30,7 +31,8 @@ const appRoutes: Routes = [
     FunctionPointsCalculatorComponent,
     CocomoCalculatorComponent,
     QsdiCalculatorComponent,
-    UsecasePointsCalculatorComponent
+    UsecasePointsCalculatorComponent,
+    ToolsListComponent
   ],
   imports: [
     BrowserModule,

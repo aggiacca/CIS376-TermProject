@@ -44,7 +44,18 @@ export class UsecasePointsCalculatorComponent implements OnInit {
     new Question("Stable Requirements", 0,2)
   ];
 
-  UCP: number;
+  UCP: number = 0;
+  totalUUCW: number = 0;
+  totalUAW: number = 0;
+  TCF: number = 0;
+  ECF: number = 0;
+
+  hoursPerPoint: number = 0;
+  totalHours = this.UCP * this.hoursPerPoint;
+  personMonths = this.totalHours / 173.333;
+  durationMonths = (this.personMonths ^ 0.38) * 2.5
+
+  calculationSuccess = false;
 
   constructor() { }
 
@@ -52,20 +63,22 @@ export class UsecasePointsCalculatorComponent implements OnInit {
   }
 
   calculateUseCasePoint(){
-    let totalUUCW= (this.simpleUUCW * 1) + (this.averageUUCW * 2) + (this.complexUUCW * 3);
-    let totalUAW= (this.simpleUAW * 1) + (this.averageUAW * 2) + (this.complexUAW * 3);
+    this.calculationSuccess = false;
+    this.totalUUCW= (this.simpleUUCW * 1) + (this.averageUUCW * 2) + (this.complexUUCW * 3);
+    this.totalUAW= (this.simpleUAW * 1) + (this.averageUAW * 2) + (this.complexUAW * 3);
     let TF = 0;
     for(let factor of this.questions){
       TF += (factor.rating * factor.weight);
     }
-    let TCF = 0.6 + (TF/100);
+    this.TCF = 0.6 + (TF/100);
 
     let EF = 0;
     for(let factor of this.environmentalFactors){
       EF += (factor.rating * factor.weight);
     }
-    let ECF = 1.4 + (-0.03 * EF);
+    this.ECF = 1.4 + (-0.03 * EF);
 
-    this.UCP = (totalUUCW + totalUAW) * TCF * ECF
+    this.UCP = (this.totalUUCW + this.totalUAW) * this.TCF * this.ECF
+    this.calculationSuccess = true;
   }
 }
