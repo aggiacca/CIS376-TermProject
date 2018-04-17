@@ -59,7 +59,9 @@
       </div>
   </div>
 
+  <br>
   <hr>
+  <br>
 
   <div class="form-row">
     <h5 class="page-header">Unadjusted Actor Weight (UAW)</h5>
@@ -67,38 +69,40 @@
   <br>
 
   <div class="form-row" style="border-bottom: black solid 1px;">
-    <div class="col-md-4">Actor Type</div>
+    <div class="col-md-7">Actor Type</div>
     <div class="col-md-2">Number of actors</div>
-    <div class="col-md-5">Weight</div>
+    <div class="col-md-1">Weight</div>
   </div>
 
 <div class="form-row">
-    <div class="col-md-6">Simple (External system that must interact with the system using a well-defined API)</div>
+    <div class="col-md-7">Simple (External system that must interact with the system using a well-defined API)</div>
     <div class="col-md-1">
       <input type="number" class="form-control" name="numInputs" [(ngModel)]="simpleUAW" placeholder="#">
     </div>
-    <div class="col-md-5">
+    <div class="col-md-1 offset-md-1">
       <input type="number" class="form-control"  placeholder="1" readonly>
     </div>
 
-    <div class="col-md-6">Average (External system that must interact with the system using standard communication protocols)</div>
+    <div class="col-md-7">Average (External system that must interact with the system using standard communication protocols)</div>
     <div class="col-md-1">
       <input type="number" class="form-control" name="numInputs" [(ngModel)]="averageUAW" placeholder="#">
     </div>
-    <div class="col-md-5">
+    <div class="col-md-1 offset-md-1">
       <input type="number" class="form-control"  placeholder="2" readonly>
     </div>
 
-    <div class="col-md-6">Complex (	Human actor using a GUI application interface)</div>
+    <div class="col-md-7">Complex (	Human actor using a GUI application interface)</div>
     <div class="col-md-1">
       <input type="number" class="form-control" name="numInputs" [(ngModel)]="complexUAW" placeholder="#">
     </div>
-    <div class="col-md-5">
+    <div class="col-md-1 offset-md-1">
       <input type="number" class="form-control"  placeholder="3" readonly>
     </div>
 </div>
 
+  <br>
   <hr>
+  <br>
 
   <div class="form-row">
     <h5 class="page-header">Technical Complexity Factor (TCF)</h5>
@@ -122,7 +126,9 @@
     </div>
   </div>
 
+  <br>
   <hr>
+  <br>
 
   <div class="form-row">
     <h5 class="page-header">Environmental Complexity Factor (ECF)</h5>
@@ -233,3 +239,9 @@
   </div>
 </div>
 
+<div id="invalidS" class="alert alert-danger" role="alert" *ngIf="showErrors">
+  Errors. Please fix these errors and press the 'Calculate Effort' again:
+  <ul>
+    <li *ngFor="let error of Errors">{{error}}</li>
+  </ul>
+</div>

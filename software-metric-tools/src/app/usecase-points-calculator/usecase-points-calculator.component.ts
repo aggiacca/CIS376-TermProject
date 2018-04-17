@@ -9,6 +9,7 @@ import {Question} from "../models/Question";
 export class UsecasePointsCalculatorComponent implements OnInit {
 
 
+
   simpleUUCW: number;
   averageUUCW: number;
   complexUUCW: number;
@@ -56,6 +57,8 @@ export class UsecasePointsCalculatorComponent implements OnInit {
   durationMonths = (this.personMonths ^ 0.38) * 2.5
 
   calculationSuccess = false;
+  Errors: Array<String> = [];
+  showErrors = false;
 
   constructor() { }
 
@@ -78,7 +81,7 @@ export class UsecasePointsCalculatorComponent implements OnInit {
     }
     this.ECF = 1.4 + (-0.03 * EF);
 
-    this.UCP = (this.totalUUCW + this.totalUAW) * this.TCF * this.ECF
+    this.UCP = (this.totalUUCW + this.totalUAW) * this.TCF * this.ECF;
     this.calculationSuccess = true;
   }
 }

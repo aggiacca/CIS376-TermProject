@@ -12,6 +12,7 @@ import { CocomoCalculatorComponent } from './cocomo-calculator/cocomo-calculator
 import { QsdiCalculatorComponent } from './qsdi-calculator/qsdi-calculator.component';
 import { UsecasePointsCalculatorComponent } from './usecase-points-calculator/usecase-points-calculator.component';
 import { ToolsListComponent } from './tools-list/tools-list.component';
+import {FunctionPointsService} from "./services/function-points-service";
 
 
 const appRoutes: Routes = [
@@ -40,7 +41,7 @@ const appRoutes: Routes = [
     NgbModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [FunctionPointsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

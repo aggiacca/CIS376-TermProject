@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {Question} from "../models/Question";
 import {WeightedParameter} from "../models/weighted-parameter";
+import {FunctionPointsService} from "../services/function-points-service";
 
 @Component({
   selector: 'app-function-points-calculator',
   templateUrl: './function-points-calculator.component.html',
-  styleUrls: ['./function-points-calculator.component.css']
+  styleUrls: ['./function-points-calculator.component.css'],
 })
 export class FunctionPointsCalculatorComponent implements OnInit {
 
@@ -50,7 +51,7 @@ export class FunctionPointsCalculatorComponent implements OnInit {
   loc = 0;
   kloc = 0;
 
-  constructor() { }
+  constructor(public FPservice: FunctionPointsService) { }
 
   ngOnInit() {
   }
@@ -58,6 +59,7 @@ export class FunctionPointsCalculatorComponent implements OnInit {
   updateLOC(num: number){
     this.loc = this.functionPoints * this.langaugeMultiplier;
     this.kloc = this.loc / 1000;
+    this.FPservice.setKLOC(this.functionPoints);
   }
   calculateFunctionPoints(){
     // reset errors
@@ -91,6 +93,7 @@ export class FunctionPointsCalculatorComponent implements OnInit {
      if(this.Errors.length == 0) {
        this.functionPoints = Math.round(this.weightedTotal * (0.65 + (0.01 * this.questionaireTotal)));
        this.computeSuccess = true;
+
      }else{
       this.showErrors = true;
     }
