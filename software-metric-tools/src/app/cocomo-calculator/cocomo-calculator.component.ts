@@ -16,7 +16,7 @@ export class CocomoCalculatorComponent implements OnInit {
   ];
 
   currentModeName: String;
-  currentMode: Array<ModeLine>;
+  currentMode: Array<ModeLine> = this.data[0].modes;
   currentComplexity: PairAB;
   currentPair: PairAB = new PairAB(0,0);
 
@@ -41,5 +41,8 @@ export class CocomoCalculatorComponent implements OnInit {
     }
   }
 
+  calculateEffort(){
+
+  }
 
 }

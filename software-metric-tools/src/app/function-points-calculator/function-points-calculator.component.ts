@@ -34,33 +34,67 @@ export class FunctionPointsCalculatorComponent implements OnInit {
     new WeightedParameter("Number of External Interfaces", [5,7,10], 0,0)
   ];
 
+  Errors: Array<String> = [];
+  showErrors = false;
+
   questionaireTotal: number;
 
   numInputsCount: number;
 
+  weightedTotal: number = 0;
   functionPoints: number = 0;
+
+  computeSuccess = false;
+
+  langaugeMultiplier = 0;
+  loc = 0;
+  kloc = 0;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  totalQuestions(){
+  updateLOC(num: number){
+    this.loc = this.functionPoints * this.langaugeMultiplier;
+    this.kloc = this.loc / 1000;
+  }
+  calculateFunctionPoints(){
+    // reset errors
+    this.Errors.length = 0;
+    this.showErrors = false;
+    this.computeSuccess = false;
+    this.weightedTotal = 0;
+
     this.questionaireTotal = 0;
 
-    for(let question of this.questions){
-      this.questionaireTotal += question.rating
+    for(let j= 0; j < this.questions.length; j++){
+      if(this.questions[j].rating >=0 && this.questions[j].rating <=5){
+        this.questionaireTotal += this.questions[j].rating
+      }else{
+        this.Errors.push("Count for Questionnaire "+ (j+1) +" must be between 0 and 5 inclusive.")
+      }
+    }
+
+    for(let i= 0; i < this.parameters.length; i++) {
+      if (this.parameters[i].count >= 0) {
+        if (this.parameters[i].weightedTotal != 0) {
+          this.weightedTotal += this.parameters[i].count * this.parameters[i].weightedTotal;
+        } else {
+          this.Errors.push("Please select a weight for Parameter " + (i + 1) + ".")
+        }
+      } else {
+        this.Errors.push("Count for Parameter" + (i + 1) + " must be greater than zero.")
+      }
+    }
+
+     if(this.Errors.length == 0) {
+       this.functionPoints = Math.round(this.weightedTotal * (0.65 + (0.01 * this.questionaireTotal)));
+       this.computeSuccess = true;
+     }else{
+      this.showErrors = true;
     }
   }
 
-  calculateFunctionPoints(){
-    let weightedInputs = this.parameters[0].count * this.parameters[0].weightedTotal;
 
-    console.log(weightedInputs);
-    this.functionPoints = weightedInputs * (0.65 + (0.01 * this.questionaireTotal));
-  }
-
-  trackByIndex(index: number, value: number) {
-    return index;
-  }
 }

@@ -4,39 +4,65 @@
 
 <hr>
 
+
 <div class="row">
-  <h3>First Fill out a questionaire</h3>
-  <ul>
-    <li>0 - No Influence</li>
+  <h3>Instructions:</h3>
+</div>
+<div class="row">
+  <ol>
+    <li>Fill out Questionnaire</li>
+    <li>Complete measured parameters by filling in the count and selecting a weight factor</li>
+    <li>Press 'Calculate Function Points' button</li>
+    <li>Insert a language multiplier to get average lines of code</li>
+  </ol>
+</div>
+
+<hr>
+
+<div class="row">
+  <h5 class="page-header">Questionnaire</h5>
+</div>
+
+<div class="row">
+  *Relevance scale:
+  <ul class="horizontal-list">
+    <li>0 - No Influence  </li>
     <li>1 - Incidental</li>
-    <li>2 - Moderate</li>
-    <li>3 - Average</li>
-    <li>4 - Significant</li>
-    <li>5 - Essential</li>
+    <li>2 - Moderate  </li>
+    <li>3 - Average </li>
+    <li>4 - Significant </li>
+    <li>5 - Essential </li>
   </ul>
+</div>
+
+<div class="row" style="border-bottom: black solid 1px;">
+  <div class="col-md-4">Question</div>
+  <div class="offset-md-4 col-md-3">Relevance*</div>
 </div>
 
 <div class="row">
   <form>
     <div *ngFor="let question of questions; let index=index" class="form-group row">
-      <label for="inputQuestion{{index}}" class="col-sm-10 col-form-label">{{index}}: {{question.content}}</label>
+      <label for="inputQuestion{{index}}" class="col-md-10 col-form-label"> {{index+1}}: {{question.content}}</label>
       <div class="col-sm-2">
         <input type="number" class="form-control" name="question{{index}}" id="inputQuestion{{index}}" [(ngModel)]="question.rating" placeholder="Input number 0-5..." min="0" max="5">
       </div>
     </div>
   </form>
-
-
 </div>
 
-<div class="row">
-  <p>Total: {{questionaireTotal}}</p>
+<!--<div class="row">-->
+  <!--<p>Total: {{questionaireTotal}}</p>-->
 
-  <button class="btn btn-primary" (click)="totalQuestions()">Calculate</button>
-</div>
+  <!--<button class="btn btn-primary" (click)="totalQuestions()">Calculate</button>-->
+<!--</div>-->
 
 
 <hr>
+
+<div class="row">
+  <h5 class="page-header">Parameters</h5>
+</div>
 
 <div class="row" style="border-bottom: black solid 1px;">
   <div class="col-md-4">Measurement Parameter</div>
@@ -50,19 +76,90 @@
     <div class="col-md-1">
       <input type="number" class="form-control" name="numInputs" [(ngModel)]="param.count" placeholder="#">
     </div>
-    <div class="col-md-5">
+    <div class="offset-md-2 col-md-3">
       <div class="form-check form-check-inline" *ngFor="let num of param.weightFactors;let index = index">
         <input class="form-check-input" type="radio" name="{{param.name}}" id="{{param.name + index}}" [value]="num" [(ngModel)]="param.weightedTotal">
         <label class="form-check-label" for="{{param.name + index}}">{{num}}</label>
       </div>
     </div>
-    <div class="col-md-1">
-      <input type="number" class="form-control" name="numInputsTotal"  readonly>
-    </div>
+
   </div>
 </form>
 
-<div class="row">
-  <p>Functions Point: {{functionPoints}}</p>
-  <button class="btn btn-primary" (click)="calculateFunctionPoints()">Calculate Functions Point</button>
+
+<hr>
+
+<div class="row offset-md-5">
+  <button class="btn btn-primary" (click)="calculateFunctionPoints()">Calculate Functions Points</button>
+</div>
+
+<br>
+
+<div id="invalidS" class="alert alert-danger" role="alert" *ngIf="showErrors">
+  Errors. Please fix these errors and press the 'Calculate Functions Points' again:
+  <ul>
+    <li *ngFor="let error of Errors">{{error}}</li>
+  </ul>
+</div>
+
+
+
+<!--<div class="alert alert-success" role="alert" *ngIf="computeSuccess">-->
+  <!--Functions Points Rounded: {{weightedTotal}} * (0.65 + 0.01 * {{questionaireTotal}}) = <strong>{{functionPoints}}</strong>-->
+<!--</div>-->
+
+<div class="row" *ngIf="computeSuccess">
+  <div class="col-md-7">
+    <div class="row">
+      <h4>Function Point Calculations</h4>
+    </div>
+    <div class="row">
+      <div class="col-md-7">Questionnaire Total (Q):</div>
+      <div class="col-md-3">
+        <input type="number" class="form-control"  placeholder="{{questionaireTotal}}" readonly>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-7">Parameters Weighted Total (T)</div>
+      <div class="col-md-3">
+        <input type="number" class="form-control"  placeholder="{{weightedTotal}}" readonly>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-7"><strong>Functions Points: T * (0.65 + 0.01 * Q) =</strong></div>
+      <div class="col-md-3">
+        <input type="number" class="form-control is-valid"  placeholder="{{functionPoints}}" readonly>
+      </div>
+    </div>
+
+
+  </div>
+  <div class="col-md-5">
+    <div class="row">
+      <h4>Lines of Code Calculations</h4>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5">Language Multiplier</div>
+      <div class="col-md-3">
+        <input type="number" class="form-control"  name="langMulti" (change)="updateLOC(langaugeMultiplier)" [(ngModel)]="langaugeMultiplier" placeholder="#">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5">Average lines of code (LOC)</div>
+      <div class="col-md-3">
+        <input type="number" class="form-control"  placeholder="{{loc}}" readonly>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5">Thousands of lines of code (KLOC)</div>
+      <div class="col-md-3">
+        <input type="number" class="form-control"  placeholder="{{kloc}}" readonly>
+      </div>
+    </div>
+  </div>
 </div>
