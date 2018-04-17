@@ -200,7 +200,7 @@
     <div class="row">
       <div class="col-md-6">Use Case Points (UCP)</div>
       <div class="col-md-3">
-        <input type="number" class="form-control"  placeholder="{{UCP}}" readonly>
+        <input type="number" class="form-control is-valid"  placeholder="{{UCP}}" readonly>
       </div>
     </div>
   </div>
@@ -212,7 +212,7 @@
     <div class="row">
       <div class="col-md-5">Hours per Point</div>
       <div class="col-md-3">
-        <input type="number" class="form-control"  name="hoursPerPoint" [(ngModel)]="hoursPerPoint" placeholder="#">
+        <input type="number" class="form-control"  name="hoursPerPoint" (change)="updateHours()" [(ngModel)]="hoursPerPoint" placeholder="#">
       </div>
     </div>
 

@@ -62,8 +62,8 @@ export class CocomoCalculatorComponent implements OnInit {
     if(this.Errors.length == 0) {
       this.setValues();
 
-      this.effort = this.a * (this.kloc ^ this.b);
-      this.devTime = this.c * (this.effort ^ this.d);
+      this.effort = this.a * (this.kloc ** this.b);
+      this.devTime = this.c * (this.effort ** this.d);
       this.peopleRequired = this.effort / this.devTime;
 
       this.calculationSuccess = true;

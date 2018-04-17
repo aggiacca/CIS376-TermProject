@@ -10,13 +10,13 @@ export class UsecasePointsCalculatorComponent implements OnInit {
 
 
 
-  simpleUUCW: number;
-  averageUUCW: number;
-  complexUUCW: number;
+  simpleUUCW: number = 0;
+  averageUUCW: number = 0;
+  complexUUCW: number = 0;
 
-  simpleUAW: number;
-  averageUAW: number;
-  complexUAW: number;
+  simpleUAW: number = 0;
+  averageUAW: number = 0;
+  complexUAW: number = 0;
 
   questions: Array<Question> = [
     new Question("Distributed system",0, 2),
@@ -52,9 +52,9 @@ export class UsecasePointsCalculatorComponent implements OnInit {
   ECF: number = 0;
 
   hoursPerPoint: number = 0;
-  totalHours = this.UCP * this.hoursPerPoint;
-  personMonths = this.totalHours / 173.333;
-  durationMonths = (this.personMonths ^ 0.38) * 2.5
+  totalHours = 0;
+  personMonths = 0;
+  durationMonths = 0;
 
   calculationSuccess = false;
   Errors: Array<String> = [];
@@ -65,23 +65,61 @@ export class UsecasePointsCalculatorComponent implements OnInit {
   ngOnInit() {
   }
 
-  calculateUseCasePoint(){
-    this.calculationSuccess = false;
-    this.totalUUCW= (this.simpleUUCW * 1) + (this.averageUUCW * 2) + (this.complexUUCW * 3);
-    this.totalUAW= (this.simpleUAW * 1) + (this.averageUAW * 2) + (this.complexUAW * 3);
-    let TF = 0;
+  updateHours(){
+    this.totalHours = this.UCP * this.hoursPerPoint;
+    this.personMonths = this.totalHours / 173.333;
+    this.durationMonths = (this.personMonths ** 0.38) * 2.5;
+  }
+
+  checkErrors(){
+    if(this.simpleUUCW < 0 || this.averageUUCW < 0 ||this.complexUUCW < 0 ){
+      this.Errors.push("UUCW values cannot be negative");
+    }
+
+    if(this.simpleUAW < 0 || this.averageUAW < 0 ||this.complexUAW < 0 ){
+      this.Errors.push("UAW values cannot be negative");
+    }
+
     for(let factor of this.questions){
-      TF += (factor.rating * factor.weight);
+      if(factor.rating < 0 || factor.weight > 5){
+        this.Errors.push("TCF factors must be between 0 and 5 inclusive.");
+      }
     }
-    this.TCF = 0.6 + (TF/100);
 
-    let EF = 0;
     for(let factor of this.environmentalFactors){
-      EF += (factor.rating * factor.weight);
+      if(factor.rating < 0 || factor.weight > 5){
+        this.Errors.push("ECF factors must be between 0 and 5 inclusive.");
+      }
     }
-    this.ECF = 1.4 + (-0.03 * EF);
 
-    this.UCP = (this.totalUUCW + this.totalUAW) * this.TCF * this.ECF;
-    this.calculationSuccess = true;
+  }
+
+  calculateUseCasePoint(){
+    this.Errors.length = 0;
+    this.showErrors = false;
+    this.calculationSuccess = false;
+
+    this.checkErrors();
+
+    if(this.Errors.length == 0) {
+      this.totalUUCW = (this.simpleUUCW * 1) + (this.averageUUCW * 2) + (this.complexUUCW * 3);
+      this.totalUAW = (this.simpleUAW * 1) + (this.averageUAW * 2) + (this.complexUAW * 3);
+      let TF = 0;
+      for (let factor of this.questions) {
+        TF += (factor.rating * factor.weight);
+      }
+      this.TCF = 0.6 + (TF / 100);
+
+      let EF = 0;
+      for (let factor of this.environmentalFactors) {
+        EF += (factor.rating * factor.weight);
+      }
+      this.ECF = 1.4 + (-0.03 * EF);
+
+      this.UCP = Math.round((this.totalUUCW + this.totalUAW) * this.TCF * this.ECF);
+      this.calculationSuccess = true;
+    }else{
+      this.showErrors = true;
+    }
   }
 }
