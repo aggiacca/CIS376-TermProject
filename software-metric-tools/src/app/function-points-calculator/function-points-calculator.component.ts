@@ -59,7 +59,7 @@ export class FunctionPointsCalculatorComponent implements OnInit {
   updateLOC(num: number){
     this.loc = this.functionPoints * this.langaugeMultiplier;
     this.kloc = this.loc / 1000;
-    this.FPservice.setKLOC(this.functionPoints);
+    this.FPservice.setKLOC(this.kloc);
   }
   calculateFunctionPoints(){
     // reset errors

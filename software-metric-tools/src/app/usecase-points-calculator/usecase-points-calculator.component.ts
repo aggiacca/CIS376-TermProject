@@ -8,8 +8,6 @@ import {Question} from "../models/Question";
 })
 export class UsecasePointsCalculatorComponent implements OnInit {
 
-
-
   simpleUUCW: number = 0;
   averageUUCW: number = 0;
   complexUUCW: number = 0;
@@ -81,14 +79,16 @@ export class UsecasePointsCalculatorComponent implements OnInit {
     }
 
     for(let factor of this.questions){
-      if(factor.rating < 0 || factor.weight > 5){
+      if(factor.rating < 0 || factor.rating > 5){
         this.Errors.push("TCF factors must be between 0 and 5 inclusive.");
+        break;
       }
     }
 
     for(let factor of this.environmentalFactors){
-      if(factor.rating < 0 || factor.weight > 5){
+      if(factor.rating < 0 || factor.rating > 5){
         this.Errors.push("ECF factors must be between 0 and 5 inclusive.");
+        break;
       }
     }
 
@@ -102,7 +102,7 @@ export class UsecasePointsCalculatorComponent implements OnInit {
     this.checkErrors();
 
     if(this.Errors.length == 0) {
-      this.totalUUCW = (this.simpleUUCW * 1) + (this.averageUUCW * 2) + (this.complexUUCW * 3);
+      this.totalUUCW = (this.simpleUUCW * 5) + (this.averageUUCW * 10) + (this.complexUUCW * 15);
       this.totalUAW = (this.simpleUAW * 1) + (this.averageUAW * 2) + (this.complexUAW * 3);
       let TF = 0;
       for (let factor of this.questions) {

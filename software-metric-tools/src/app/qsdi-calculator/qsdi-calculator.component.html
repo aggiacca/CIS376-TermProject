@@ -1,5 +1,40 @@
 <div class="row">
-  <h1 class="page-header">DSQI Calculator</h1>
+  <h1 class="page-header">Design Structure Quality Index (DSQI) Calculator</h1>
+</div>
+
+<hr>
+
+<div class="row">
+
+  <div class="col-md-6">
+    <div class="row">
+      <h3>Instructions:</h3>
+    </div>
+
+    <div class="row">
+      <ol>
+        <li>Enter a number for each S-Value.</li>
+        <li>Check D<sub>1</sub> if applicable.</li>
+        <li>Click 'Set S-Values' button. Fix any errors if necessary.</li>
+        <li>Set a weight for each D-Value.</li>
+        <li>Click 'Calculate DSQI' button.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="row">
+      <h3>Help:</h3>
+    </div>
+
+    <div class="row">
+      <ul>
+        <li>Confused? Check out the Wikipedia page <a href="https://en.wikipedia.org/wiki/DSQI" target="_blank">here</a> to learn more.</li>
+        <li>Another helpful resource <a href="http://logicalprogram.blogspot.com/p/dsqi.html" target="_blank">here</a>.</li>
+      </ul>
+    </div>
+  </div>
+
 </div>
 
 <hr>
@@ -23,18 +58,12 @@
       <div class="col-md-1">S<sub>{{index+1}}</sub></div>
       <div class="col-md-6">{{question.content}}</div>
       <div class="col-sm-1">
-        <input type="number" class="form-control" name="sValue{{index+1}}" id="inputsValue{{index+1}}" [(ngModel)]="question.rating" placeholder="#" min="0" max="5">
+        <input type="number" class="form-control" name="sValue{{index+1}}" id="inputsValue{{index+1}}" [(ngModel)]="question.rating" placeholder="#" min="0">
       </div>
     </div>
 
-    <div class="form-row">
-      <label for="d1CheckBox" class="col-sm-2 control-label">
-          <span data-toggle="tooltip" data-placement="left" title="Click for Help" class="red-tooltip">
-            <a role="button" class="btn btn-info btn-xs" data-toggle="collapse" href="#D1Des2" aria-expanded="false" aria-controls="D1Des2">
-              D<sub>1</sub>
-            </a>
-            </span>
-      </label>
+    <div class="row">
+    <div class="col-md-1">D<sub>1</sub></div>
 
       <div class="col-sm-4">
         <div class="checkbox">
@@ -44,23 +73,13 @@
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="collapse" id="D1Des2">
-      <div class="well">
-        <ul>
-          <li>
-            Definition: Program Structure
-          </li>
-          <li>
-            If the architectural design was developed using a distinct method(e.g. data flow-oriented or object-oriented design), then check the box (D<sub>1</sub> = 1), otherwise keep unchecked (D<sub>1</sub> = 0).
-          </li>
-        </ul>
-      </div>
-    </div>
+  <br>
 
     <div class="form-row">
       <div class="offset-md-5 col-sm-1">
-        <button id="sValueBtn" (click)="setSValues()" class="btn btn-primary">Set S Values</button>
+        <button id="sValueBtn" (click)="setSValues()" class="btn btn-primary">Set S-Values</button>
       </div>
       <div class="offset-md-1 col-sm-1">
         <span id="successCheck" class="glyphicon glyphicon-ok text-success" aria-hidden="true" style="display: none"></span>
@@ -76,15 +95,12 @@
       </ul>
     </div>
 
-  </div>
-
-
 </form>
 
 <!-- divider -->
 
 <br />
-<br />
+<hr>
 <br />
 
 <div *ngIf="showDValues">
@@ -138,18 +154,30 @@
       <div id="weightTotal" class="alert alert-danger" role="alert" style="display: none">Weights don't add up to one hundred </div>
       <div id="invalidWeight" class="alert alert-danger" role="alert" style="display: none">Weights must be greater than 0</div>
 
--
-      <div class="form-row" *ngIf="dsqi != 0">
-        <label for="DSQI" class="col-sm-2 control-label">DSQI </label>
-        <div class="col-sm-3 alert alert-success" role="alert">
-          <input type="number" readonly class="form-control" id="DSQI" placeholder="{{dsqi}}">
-        </div>
-      </div>
-
-      <div id="invalidD" class="alert alert-danger" role="alert" *ngIf="weightError" >
-        Error - Weights do not total to 100%
-      </div>
-
     </div>
   </form>
   </div>
+
+<br>
+
+<div id="invalidD" class="alert alert-danger" role="alert" *ngIf="weightError" >
+  Error - Weights do not total to 100%
+</div>
+
+
+<div class="row" *ngIf="calculationSuccess">
+  <div class="col-md-6">
+    <div class="row">
+      <h4>Point Calculations</h4>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5">DSQI: Sum(w<sub>i</sub>D<sub>i</sub>)=</div>
+      <div class="col-md-3">
+        <input type="number" class="form-control is-valid"  placeholder="{{dsqi}}" readonly>
+      </div>
+    </div>
+
+
+  </div>
+</div>

@@ -37,6 +37,7 @@ export class QsdiCalculatorComponent implements OnInit {
   showDValues = false;
   showSErrors = false;
   weightError = false;
+  calculationSuccess = false;
 
   constructor() { }
 
@@ -47,6 +48,7 @@ export class QsdiCalculatorComponent implements OnInit {
     // reset errors
     this.sErrors.length = 0;
     this.showSErrors = false;
+    this.calculationSuccess = false;
 
     if(!(this.sValues[0].rating > 0)){
       this.sErrors.push("S1 must be greater than 0");
@@ -76,7 +78,6 @@ export class QsdiCalculatorComponent implements OnInit {
       this.sErrors.push("S1 must be greater than S7");
     }
 
-    console.dir(this.sErrors);
     if(this.sErrors.length > 0){
       this.showSErrors = true;
       this.showDValues = false;
@@ -101,6 +102,7 @@ export class QsdiCalculatorComponent implements OnInit {
 
   calculateDSQI(){
     this.weightError = false;
+    this.calculationSuccess = false;
 
     let totalWeight = 0;
     for(let dValue of this.dValues){
@@ -112,10 +114,19 @@ export class QsdiCalculatorComponent implements OnInit {
         this.dsqi += (dValue.rating * (dValue.weight/100));
       }
 
+      this.dsqi = this.round(this.dsqi,3);
+      this.calculationSuccess = true;
+
     }else{
       this.weightError = true;
     }
 
   }
+
+  round(value, precision) {
+    let multiplier = Math.pow(10, precision || 0);
+    return Math.round(value * multiplier) / multiplier;
+  }
+
 
 }
