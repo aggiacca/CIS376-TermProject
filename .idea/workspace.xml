@@ -6,13 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="8df687a6-0a7d-42f8-91b6-9993127ed295" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/software-metric-tools/src/app/cocomo-calculator/cocomo-calculator.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/software-metric-tools/src/app/cocomo-calculator/cocomo-calculator.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/software-metric-tools/src/app/function-points-calculator/function-points-calculator.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/software-metric-tools/src/app/function-points-calculator/function-points-calculator.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/software-metric-tools/src/app/function-points-calculator/function-points-calculator.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/software-metric-tools/src/app/function-points-calculator/function-points-calculator.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/software-metric-tools/src/app/qsdi-calculator/qsdi-calculator.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/software-metric-tools/src/app/qsdi-calculator/qsdi-calculator.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/software-metric-tools/src/app/qsdi-calculator/qsdi-calculator.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/software-metric-tools/src/app/qsdi-calculator/qsdi-calculator.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/software-metric-tools/src/app/usecase-points-calculator/usecase-points-calculator.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/software-metric-tools/src/app/usecase-points-calculator/usecase-points-calculator.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/software-metric-tools/src/app/usecase-points-calculator/usecase-points-calculator.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/software-metric-tools/src/app/usecase-points-calculator/usecase-points-calculator.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/software-metric-tools/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/software-metric-tools/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/software-metric-tools/src/app/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/software-metric-tools/src/app/header/header.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/software-metric-tools/src/app/index/index.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/software-metric-tools/src/app/index/index.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/software-metric-tools/src/app/qsdi-calculator/qsdi-calculator.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/software-metric-tools/src/app/qsdi-calculator/qsdi-calculator.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/software-metric-tools/src/app/dsqi/dsqi-calculator.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/software-metric-tools/src/app/qsdi-calculator/qsdi-calculator.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/software-metric-tools/src/app/qsdi-calculator/qsdi-calculator.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/software-metric-tools/src/app/dsqi/dsqi-calculator.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/software-metric-tools/src/app/qsdi-calculator/qsdi-calculator.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/software-metric-tools/src/app/dsqi/dsqi-calculator.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/software-metric-tools/src/app/qsdi-calculator/qsdi-calculator.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/software-metric-tools/src/app/dsqi/dsqi-calculator.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/software-metric-tools/src/app/tools-list/tools-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/software-metric-tools/src/app/tools-list/tools-list.component.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,86 +31,29 @@
     <window id="1">
       <content type="file-editors">
         <state>
-          <splitter split-orientation="horizontal" split-proportion="0.5">
-            <split-first>
-              <leaf>
-                <file leaf-file-name="function-points-calculator.component.html" pinned="false" current-in-tab="true">
-                  <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/function-points-calculator/function-points-calculator.component.html">
-                    <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="272">
-                        <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
-                      </state>
-                    </provider>
-                  </entry>
-                </file>
-                <file leaf-file-name="qsdi-calculator.component.html" pinned="false" current-in-tab="false">
-                  <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/qsdi-calculator/qsdi-calculator.component.html">
-                    <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="1717">
-                        <caret line="137" column="79" selection-start-line="137" selection-start-column="79" selection-end-line="137" selection-end-column="79" />
-                        <folding>
-                          <element signature="n#style#0;n#div#1;n#div#0;n#form#0;n#!!top" expanded="true" />
-                          <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-                        </folding>
-                      </state>
-                    </provider>
-                  </entry>
-                </file>
-                <file leaf-file-name="usecase-points-calculator.component.html" pinned="false" current-in-tab="false">
-                  <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/usecase-points-calculator/usecase-points-calculator.component.html">
-                    <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="340">
-                        <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
-                        <folding>
-                          <element signature="n#style#0;n#div#1;n#form#0;n#!!top" expanded="true" />
-                        </folding>
-                      </state>
-                    </provider>
-                  </entry>
-                </file>
-              </leaf>
-            </split-first>
-            <split-second>
-              <leaf>
-                <file leaf-file-name="function-points-calculator.component.ts" pinned="false" current-in-tab="true">
-                  <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/function-points-calculator/function-points-calculator.component.ts">
-                    <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="516">
-                        <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
-                        <folding>
-                          <element signature="e#0#50#0" expanded="true" />
-                        </folding>
-                      </state>
-                    </provider>
-                  </entry>
-                </file>
-                <file leaf-file-name="qsdi-calculator.component.ts" pinned="false" current-in-tab="false">
-                  <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/qsdi-calculator/qsdi-calculator.component.ts">
-                    <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="601">
-                        <caret line="107" column="36" lean-forward="true" selection-start-line="107" selection-start-column="36" selection-end-line="107" selection-end-column="36" />
-                        <folding>
-                          <element signature="e#0#50#0" expanded="true" />
-                        </folding>
-                      </state>
-                    </provider>
-                  </entry>
-                </file>
-                <file leaf-file-name="usecase-points-calculator.component.ts" pinned="false" current-in-tab="false">
-                  <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/usecase-points-calculator/usecase-points-calculator.component.ts">
-                    <provider selected="true" editor-type-id="text-editor">
-                      <state relative-caret-position="-731">
-                        <caret line="8" column="65" selection-start-line="8" selection-start-column="65" selection-end-line="8" selection-end-column="65" />
-                        <folding>
-                          <element signature="e#0#50#0" expanded="true" />
-                        </folding>
-                      </state>
-                    </provider>
-                  </entry>
-                </file>
-              </leaf>
-            </split-second>
-          </splitter>
+          <leaf>
+            <file leaf-file-name="index.component.html" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/index/index.component.html">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="153">
+                    <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+                    <folding>
+                      <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="tools-list.component.html" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/tools-list/tools-list.component.html">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="340">
+                    <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
         </state>
       </content>
     </window>
@@ -116,23 +62,29 @@
     <splitter split-orientation="horizontal" split-proportion="0.5429467">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="cocomo-calculator.component.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="cocomo-calculator.component.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/cocomo-calculator/cocomo-calculator.component.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="289">
-                  <caret line="17" column="36" lean-forward="true" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
-                  <folding>
-                    <element signature="n#div#5;n#!!top" />
-                  </folding>
+                <state relative-caret-position="272">
+                  <caret line="16" column="74" selection-start-line="16" selection-start-column="74" selection-end-line="16" selection-end-column="74" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.component.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/index/index.component.html">
+          <file leaf-file-name="app.component.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/app.component.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="289">
+                  <caret line="17" selection-start-line="17" selection-end-line="17" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="header.component.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/header/header.component.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="238">
-                  <caret line="14" column="39" lean-forward="true" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+                  <caret line="14" column="52" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
                 </state>
               </provider>
             </entry>
@@ -159,14 +111,47 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="cocomo-calculator.component.ts" pinned="false" current-in-tab="true">
+          <file leaf-file-name="cocomo-calculator.component.ts" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/cocomo-calculator/cocomo-calculator.component.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="476">
-                  <caret line="74" column="14" lean-forward="true" selection-start-line="74" selection-start-column="14" selection-end-line="74" selection-end-column="14" />
+                <state relative-caret-position="1156">
+                  <caret line="70" column="29" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="29" />
                   <folding>
                     <element signature="e#0#50#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="dsqi-calculator.component.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/dsqi/dsqi-calculator.component.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="2329">
+                  <caret line="137" column="79" selection-start-line="137" selection-start-column="79" selection-end-line="137" selection-end-column="79" />
+                  <folding>
+                    <element signature="n#style#0;n#div#1;n#div#0;n#form#0;n#!!top" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="dsqi-calculator.component.ts" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/dsqi/dsqi-calculator.component.ts">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="289">
+                  <caret line="17" column="48" lean-forward="true" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+                  <folding>
+                    <element signature="e#0#50#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="firebase.json" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/software-metric-tools/firebase.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="272">
+                  <caret line="16" selection-start-line="16" selection-end-line="16" />
                 </state>
               </provider>
             </entry>
@@ -183,8 +168,11 @@
           <file leaf-file-name="app.module.ts" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/app.module.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="187">
-                  <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+                <state relative-caret-position="174">
+                  <caret line="24" column="15" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="15" />
+                  <folding>
+                    <element signature="e#0#58#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -230,6 +218,8 @@
       <find>inclus</find>
       <find>^</find>
       <find>update</find>
+      <find>adam</find>
+      <find>qsdi</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -239,28 +229,31 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/software-metric-tools/.angular-cli.json" />
-        <option value="$PROJECT_DIR$/software-metric-tools/src/app/app.component.html" />
         <option value="$PROJECT_DIR$/software-metric-tools/src/app/models/weighted-parameter.ts" />
-        <option value="$PROJECT_DIR$/software-metric-tools/src/app/header/header.component.html" />
         <option value="$PROJECT_DIR$/software-metric-tools/src/app/models/PairAB.ts" />
         <option value="$PROJECT_DIR$/software-metric-tools/src/app/models/Mode-line.ts" />
         <option value="$PROJECT_DIR$/software-metric-tools/src/app/models/COCOMO-line.ts" />
         <option value="$PROJECT_DIR$/software-metric-tools/src/app/models/Question.ts" />
         <option value="$PROJECT_DIR$/software-metric-tools/src/app/models/ToolsCards.ts" />
-        <option value="$PROJECT_DIR$/software-metric-tools/src/app/tools-list/tools-list.component.html" />
         <option value="$PROJECT_DIR$/software-metric-tools/src/app/function-points-calculator/function-points-calculator.component.css" />
         <option value="$PROJECT_DIR$/software-metric-tools/src/styles.css" />
-        <option value="$PROJECT_DIR$/software-metric-tools/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/software-metric-tools/src/app/services/function-points-service.ts" />
         <option value="$PROJECT_DIR$/software-metric-tools/src/app/cocomo-calculator/cocomo-calculator.component.ts" />
-        <option value="$PROJECT_DIR$/software-metric-tools/src/app/index/index.component.html" />
-        <option value="$PROJECT_DIR$/software-metric-tools/src/app/qsdi-calculator/qsdi-calculator.component.ts" />
         <option value="$PROJECT_DIR$/software-metric-tools/src/app/qsdi-calculator/qsdi-calculator.component.html" />
         <option value="$PROJECT_DIR$/software-metric-tools/src/app/usecase-points-calculator/usecase-points-calculator.component.html" />
-        <option value="$PROJECT_DIR$/software-metric-tools/src/app/cocomo-calculator/cocomo-calculator.component.html" />
         <option value="$PROJECT_DIR$/software-metric-tools/src/app/usecase-points-calculator/usecase-points-calculator.component.ts" />
         <option value="$PROJECT_DIR$/software-metric-tools/src/app/function-points-calculator/function-points-calculator.component.ts" />
         <option value="$PROJECT_DIR$/software-metric-tools/src/app/function-points-calculator/function-points-calculator.component.html" />
+        <option value="$PROJECT_DIR$/software-metric-tools/src/app/cocomo-calculator/cocomo-calculator.component.html" />
+        <option value="$PROJECT_DIR$/software-metric-tools/src/app/app.component.html" />
+        <option value="$PROJECT_DIR$/software-metric-tools/firebase.json" />
+        <option value="$PROJECT_DIR$/software-metric-tools/src/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/software-metric-tools/src/app/tools-list/tools-list.component.html" />
+        <option value="$PROJECT_DIR$/software-metric-tools/src/app/index/index.component.html" />
+        <option value="$PROJECT_DIR$/software-metric-tools/src/app/qsdi-calculator/qsdi-calculator.component.ts" />
+        <option value="$PROJECT_DIR$/software-metric-tools/src/app/qsdi-calculator/d-s-q-i-calculator.component.ts" />
+        <option value="$PROJECT_DIR$/software-metric-tools/src/app/dsqi/dsqi-calculator.component.ts" />
+        <option value="$PROJECT_DIR$/software-metric-tools/src/app/header/header.component.html" />
       </list>
     </option>
   </component>
@@ -327,6 +320,14 @@
               <item name="software-metric-tools" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="dsqi" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CIS376-TermProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CIS376-TermProject" type="462c0819:PsiDirectoryNode" />
+              <item name="software-metric-tools" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="function-points-calculator" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -359,14 +360,6 @@
               <item name="software-metric-tools" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="qsdi-calculator" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CIS376-TermProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CIS376-TermProject" type="462c0819:PsiDirectoryNode" />
-              <item name="software-metric-tools" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -384,6 +377,20 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="usecase-points-calculator" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CIS376-TermProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CIS376-TermProject" type="462c0819:PsiDirectoryNode" />
+              <item name="software-metric-tools" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CIS376-TermProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CIS376-TermProject" type="462c0819:PsiDirectoryNode" />
+              <item name="software-metric-tools" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="environments" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -441,12 +448,15 @@
       <workItem from="1523905697778" duration="607000" />
       <workItem from="1523913608900" duration="9060000" />
       <workItem from="1523923860559" duration="13137000" />
-      <workItem from="1523997484742" duration="4278000" />
+      <workItem from="1523997484742" duration="7309000" />
+      <workItem from="1524011993420" duration="2015000" />
+      <workItem from="1524023454131" duration="2328000" />
+      <workItem from="1524025819021" duration="2002000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76873000" />
+    <option name="totallyTimeSpent" value="86249000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -459,17 +469,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TypeScript" order="7" weight="0.32944915" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19599578" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2065332" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32944915" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32944915" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32944915" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.1917373" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.19067797" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -478,7 +488,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32944915" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -503,34 +512,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/app.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/header/header.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="50" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/software-metric-tools/src/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/models/weighted-parameter.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/function-points-calculator/function-points-calculator.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="918">
@@ -556,9 +537,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -622,9 +600,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
           <caret line="37" column="21" lean-forward="true" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -707,34 +682,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/models/PairAB.ts" />
     <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/models/COCOMO-line.ts" />
-    <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/app.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/header/header.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/models/ToolsCards.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/tools-list/tools-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="37" lean-forward="true" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -760,13 +711,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/models/Mode-line.ts" />
-    <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/services/function-points-service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -788,57 +732,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/index/index.component.html">
+    <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/function-points-calculator/function-points-calculator.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="39" lean-forward="true" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/qsdi-calculator/qsdi-calculator.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1717">
-          <caret line="137" column="79" selection-start-line="137" selection-start-column="79" selection-end-line="137" selection-end-column="79" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/qsdi-calculator/qsdi-calculator.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="601">
-          <caret line="107" column="36" lean-forward="true" selection-start-line="107" selection-start-column="36" selection-end-line="107" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/cocomo-calculator/cocomo-calculator.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="36" lean-forward="true" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
-          <folding>
-            <element signature="n#div#5;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/cocomo-calculator/cocomo-calculator.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="74" column="14" lean-forward="true" selection-start-line="74" selection-start-column="14" selection-end-line="74" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="493">
+          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/usecase-points-calculator/usecase-points-calculator.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
+        <state relative-caret-position="697">
           <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
           <folding>
             <element signature="n#style#0;n#div#1;n#form#0;n#!!top" expanded="true" />
@@ -846,9 +749,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/cocomo-calculator/cocomo-calculator.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1156">
+          <caret line="70" column="29" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/software-metric-tools/firebase.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/function-points-calculator/function-points-calculator.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="533">
+          <caret line="83" column="28" selection-start-line="83" selection-start-column="15" selection-end-line="83" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/usecase-points-calculator/usecase-points-calculator.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-731">
+        <state relative-caret-position="-1153">
           <caret line="8" column="65" selection-start-line="8" selection-start-column="65" selection-end-line="8" selection-end-column="65" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
@@ -856,20 +783,86 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/function-points-calculator/function-points-calculator.component.ts">
+    <entry file="file://$PROJECT_DIR$/software-metric-tools/dist/main.cb73b31f9ad87d0617bb.bundle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+        <state relative-caret-position="-765" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/software-metric-tools/dist/inline.318b50c57b4eba3d437b.bundle.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/cocomo-calculator/cocomo-calculator.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="74" selection-start-line="16" selection-start-column="74" selection-end-line="16" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/app.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/tools-list/tools-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/index/index.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="24" column="15" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/dsqi/dsqi-calculator.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2329">
+          <caret line="137" column="79" selection-start-line="137" selection-start-column="79" selection-end-line="137" selection-end-column="79" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#form#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/software-metric-tools/dist/main.b81c35d5ba65e9d2ea76.bundle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret column="382413" selection-start-column="382413" selection-end-column="382413" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/dsqi/dsqi-calculator.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="48" lean-forward="true" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/function-points-calculator/function-points-calculator.component.html">
+    <entry file="file://$PROJECT_DIR$/software-metric-tools/src/app/header/header.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+        <state relative-caret-position="238">
+          <caret line="14" column="52" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
         </state>
       </provider>
     </entry>

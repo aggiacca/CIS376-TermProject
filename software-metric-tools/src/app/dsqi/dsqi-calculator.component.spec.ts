@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { QsdiCalculatorComponent } from './qsdi-calculator.component';
+import { DsqiCalculatorComponent } from './dsqi-calculator.component';
 
-describe('QsdiCalculatorComponent', () => {
-  let component: QsdiCalculatorComponent;
-  let fixture: ComponentFixture<QsdiCalculatorComponent>;
+describe('DsqiCalculatorComponent', () => {
+  let component: DsqiCalculatorComponent;
+  let fixture: ComponentFixture<DsqiCalculatorComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ QsdiCalculatorComponent ]
+      declarations: [ DsqiCalculatorComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(QsdiCalculatorComponent);
+    fixture = TestBed.createComponent(DsqiCalculatorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

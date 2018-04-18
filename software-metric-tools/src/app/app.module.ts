@@ -9,7 +9,7 @@ import {RouterModule, Routes} from "@angular/router";
 import { FunctionPointsCalculatorComponent } from './function-points-calculator/function-points-calculator.component';
 import {FormsModule} from "@angular/forms";
 import { CocomoCalculatorComponent } from './cocomo-calculator/cocomo-calculator.component';
-import { QsdiCalculatorComponent } from './qsdi-calculator/qsdi-calculator.component';
+import { DsqiCalculatorComponent } from './dsqi/dsqi-calculator.component';
 import { UsecasePointsCalculatorComponent } from './usecase-points-calculator/usecase-points-calculator.component';
 import { ToolsListComponent } from './tools-list/tools-list.component';
 import {FunctionPointsService} from "./services/function-points-service";
@@ -17,11 +17,12 @@ import {FunctionPointsService} from "./services/function-points-service";
 
 const appRoutes: Routes = [
   { path: '', component: IndexComponent, pathMatch: 'full' },
+  { path: 'tools-list', component: ToolsListComponent, pathMatch: 'full' },
   { path: 'app', component: AppComponent, pathMatch: 'full' },
   { path: 'index', component: IndexComponent, pathMatch: 'full' },
   { path: 'function-points', component: FunctionPointsCalculatorComponent, pathMatch: 'full' },
   { path: 'cocomo-calculator', component: CocomoCalculatorComponent, pathMatch: 'full' },
-  { path: 'qsdi-calculator', component: QsdiCalculatorComponent, pathMatch: 'full' },
+  { path: 'dsqi-calculator', component: DsqiCalculatorComponent, pathMatch: 'full' },
   { path: 'usecase-points-calculator', component: UsecasePointsCalculatorComponent, pathMatch: 'full' },
 ];
 
@@ -32,7 +33,7 @@ const appRoutes: Routes = [
     IndexComponent,
     FunctionPointsCalculatorComponent,
     CocomoCalculatorComponent,
-    QsdiCalculatorComponent,
+    DsqiCalculatorComponent,
     UsecasePointsCalculatorComponent,
     ToolsListComponent
   ],

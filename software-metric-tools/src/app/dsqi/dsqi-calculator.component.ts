@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {Question} from "../models/Question";
 
 @Component({
-  selector: 'app-qsdi-calculator',
-  templateUrl: './qsdi-calculator.component.html',
-  styleUrls: ['./qsdi-calculator.component.css']
+  selector: 'app-dsqi-calculator',
+  templateUrl: './dsqi-calculator.component.html',
+  styleUrls: ['./dsqi-calculator.component.css']
 })
-export class QsdiCalculatorComponent implements OnInit {
+export class DsqiCalculatorComponent implements OnInit {
 
   sValues: Array<Question> = [
     new Question("The total number of modules",0),
@@ -103,6 +103,7 @@ export class QsdiCalculatorComponent implements OnInit {
   calculateDSQI(){
     this.weightError = false;
     this.calculationSuccess = false;
+    this.dsqi = 0;
 
     let totalWeight = 0;
     for(let dValue of this.dValues){
