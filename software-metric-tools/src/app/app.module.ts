@@ -16,6 +16,7 @@ import {FunctionPointsService} from "./services/function-points-service";
 
 
 const appRoutes: Routes = [
+  { path: '', component: IndexComponent, pathMatch: 'full' },
   { path: 'app', component: AppComponent, pathMatch: 'full' },
   { path: 'index', component: IndexComponent, pathMatch: 'full' },
   { path: 'function-points', component: FunctionPointsCalculatorComponent, pathMatch: 'full' },
