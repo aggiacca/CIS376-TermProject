@@ -62,7 +62,7 @@ export class CocomoCalculatorComponent implements OnInit {
     if(this.Errors.length == 0) {
       this.setValues();
 
-      this.effort = this.a * (this.kloc ** this.b);
+      this.effort = this.round(this.a * (this.kloc ** this.b), 2);
       this.devTime = this.c * (this.effort ** this.d);
       this.peopleRequired = this.effort / this.devTime;
 
@@ -87,6 +87,11 @@ export class CocomoCalculatorComponent implements OnInit {
       this.d = 0.32;
     }
 
+  }
+
+  round(value, precision) {
+    let multiplier = Math.pow(10, precision || 0);
+    return Math.round(value * multiplier) / multiplier;
   }
 
 }

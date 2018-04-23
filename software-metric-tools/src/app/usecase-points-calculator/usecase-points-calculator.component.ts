@@ -4,7 +4,7 @@ import {Question} from "../models/Question";
 @Component({
   selector: 'app-usecase-points-calculator',
   templateUrl: './usecase-points-calculator.component.html',
-  styleUrls: ['./usecase-points-calculator.component.css']
+  styleUrls: ['./usecase-points-calculator.component.css'],
 })
 export class UsecasePointsCalculatorComponent implements OnInit {
 
